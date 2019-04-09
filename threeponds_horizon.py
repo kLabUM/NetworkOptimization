@@ -6,7 +6,7 @@ import seaborn as sns
 sns.set_style("white")
 
 # Create a model 
-m = Model("twoponds_timeoftravel")
+m = Model("threeponds_timeoftravel")
 
 # Create intial volume 
 InitialVolume = 1000

@@ -97,7 +97,7 @@ def Subproblem(Volume_Links, init_vol, inflows, horizon_time=20):
     return data, inflows
 
 # Create water in the system
-INIT_VOLUME = [500, 500, 500]
+INIT_VOLUME = [500, 500, 0]
 DATA = []
 # Iteration 1
 volume_links, volume_basins = MasterProblem(20, INIT_VOLUME)
@@ -115,32 +115,33 @@ for t in range(0,15):
     temp = copy.deepcopy(inflows[10:])
     inflows = np.zeros(20)
     inflows[:10] = temp
-    
+
+
 # Stack the things
-volume_1 = DATA[0]["P1"]["volume"][:19]
+volume_1 = DATA[0]["P1"]["volume"] 
 for i in range(1, len(DATA)):
-    volume_1 = np.append(volume_1, DATA[i]["P1"]["volume"][:19])
+    volume_1 = np.append(volume_1, DATA[i]["P1"]["volume"] )
     
-volume_2 = DATA[0]["P2"]["volume"][:19]
+volume_2 = DATA[0]["P2"]["volume"] 
 for i in range(1, len(DATA)):
-    volume_2 = np.append(volume_2, DATA[i]["P2"]["volume"][:19])
+    volume_2 = np.append(volume_2, DATA[i]["P2"]["volume"] )
     
-volume_3= DATA[0]["P3"]["volume"][:19]
+volume_3= DATA[0]["P3"]["volume"] 
 
 for i in range(1, len(DATA)):
-    volume_3 = np.append(volume_3, DATA[i]["P3"]["volume"][:19])
+    volume_3 = np.append(volume_3, DATA[i]["P3"]["volume"] )
 
-outflow_1 = DATA[0]["P1"]["outflow"][:19]
+outflow_1 = DATA[0]["P1"]["outflow"] 
 for i in range(1, len(DATA)):
-    outflow_1 = np.append(outflow_1, DATA[i]["P1"]["outflow"][:19])
+    outflow_1 = np.append(outflow_1, DATA[i]["P1"]["outflow"] )
     
-outflow_2 = DATA[0]["P2"]["outflow"][:19]
+outflow_2 = DATA[0]["P2"]["outflow"] 
 for i in range(1, len(DATA)):
-    outflow_2 = np.append(outflow_2, DATA[i]["P2"]["outflow"][:19])
+    outflow_2 = np.append(outflow_2, DATA[i]["P2"]["outflow"] )
     
-outflow_3= DATA[0]["P3"]["outflow"][:19]
+outflow_3= DATA[0]["P3"]["outflow"] 
 for i in range(1, len(DATA)):
-    outflow_3 = np.append(outflow_3, DATA[i]["P3"]["outflow"][:19])
+    outflow_3 = np.append(outflow_3, DATA[i]["P3"]["outflow"] )
 
 plt.subplot(2,3,1)
 plt.plot(volume_1, linewidth=2.0)

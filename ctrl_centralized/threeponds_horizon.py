@@ -14,11 +14,13 @@ InitialVolume = 500
 basins = [0, 1, 2]
 
 # Time horizon for solving
-horizon = [i for i in range(0,300)]
+horizon = [i for i in range(0,600)]
 
 #inflows 
-inflows = np.zeros((300))
-#inflows[:150] = np.sin(np.linspace(0,1.0,150)*np.pi) * 5.0
+inflows = np.zeros((600))
+inflows[:200] = np.sin(np.linspace(0,1.0,200)*np.pi) * 5.0
+
+print(2*inflows.sum())
 # Create volumes for each basin 
 volumes = m.addVars(horizon, basins, ub=1000, name="volume")
 
@@ -31,7 +33,7 @@ outflows = m.addVars(horizon, basins, name="outflows")
 ## 2. Flow limit in channels 
 m.addConstrs((outflows[time, 0] <= 10 for time in horizon), name="Upstream Channel1")
 m.addConstrs((outflows[time, 1] <= 10 for time in horizon), name="Upstream Channel2")
-m.addConstrs((outflows[time, 2] <= 10 for time in horizon), name="Downstream Channel")
+m.addConstrs((outflows[time, 2] <= 5 for time in horizon), name="Downstream Channel")
 
 ## 3. Flow limit based on the volume in the ponds
 m.addConstrs((outflows[time, 0] <= (volumes[time-1, 0]*1.13047751*0.01 +  3.65949363) for time in horizon[1:]), name="Upstream Pond1")
@@ -71,32 +73,32 @@ plt.subplot(3,3,1)
 plt.plot(inflows)
 plt.ylabel("Inflow")
 plt.title("P1")
-plt.ylim([0, 6])
+plt.ylim([0, 20])
 
 plt.subplot(3,3,2)
 plt.plot(inflows)
 plt.title("P2")
-plt.ylim([0, 6])
+plt.ylim([0, 20])
 
 
 plt.subplot(3,3,3)
-plt.plot(np.zeros(len(horizon)))
+plt.plot(np.asarray(data["outflows_1"]) + np.asarray(data["outflows_0"]))
 plt.title("P3")
-plt.ylim([0, 6])
+plt.ylim([0, 20])
 
 plt.subplot(3,3,4)
 plt.plot(data["volume_0"])
 plt.ylabel("Volume")
-plt.ylim([0, 1000])
+plt.ylim([0, 1100])
 
 plt.subplot(3,3,5)
 plt.plot(data["volume_1"])
-plt.ylim([0, 1000])
+plt.ylim([0, 1100])
 
 
 plt.subplot(3,3,6)
 plt.plot(data["volume_2"])
-plt.ylim([0, 1000])
+plt.ylim([0, 1100])
 
 plt.subplot(3,3,7)
 plt.plot(data["outflows_0"])
@@ -110,8 +112,5 @@ plt.ylim([0, 15])
 plt.subplot(3,3,9)
 plt.plot(data["outflows_2"])
 plt.ylim([0, 15])
-
-plt.figure(2)
-plt.plot(np.cumsum(data["outflows_2"]))
 
 plt.show()

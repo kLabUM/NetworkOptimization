@@ -19,6 +19,7 @@ horizon = [i for i in range(0,600)]
 #inflows 
 inflows = np.zeros((600))
 inflows[:200] = np.sin(np.linspace(0,1.0,200)*np.pi) * 5.0
+#inflows[:200] = np.ones(200)*1.0
 
 print(2*inflows.sum())
 # Create volumes for each basin 

@@ -120,11 +120,11 @@ for t in range(0,15):
 # Stack the things
 volume_1 = DATA[0]["P1"]["volume"] 
 for i in range(1, len(DATA)):
-    volume_1 = np.append(volume_1, DATA[i]["P1"]["volume"])
+    volume_1 = np.append(volume_1, DATA[i]["P1"]["volume"] )
     
 volume_2 = DATA[0]["P2"]["volume"] 
 for i in range(1, len(DATA)):
-    volume_2 = np.append(volume_2, DATA[i]["P2"]["volume"])
+    volume_2 = np.append(volume_2, DATA[i]["P2"]["volume"] )
     
 volume_3= DATA[0]["P3"]["volume"] 
 
@@ -173,3 +173,4 @@ plt.figure(2)
 plt.plot(np.cumsum(outflow_3))
 
 plt.show()
+

@@ -13323,12 +13323,12 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Network-dynamics">Network dynamics<a class="anchor-link" href="#Network-dynamics">&#182;</a></h1><ul>
 <li><strong>Mass balance</strong>
-$$ V_i^t = V_i^{t-1} + q_i^{t-1} +  \sum_{j} x_{ji}^{t-\delta_{ji}} - \sum_{j} x_{ij}^{t-1}$$</li>
+$$ V_i^t = V_i^{t-1} + q_i^{t} +  \sum_{j} x_{ji}^{t-\delta_{ji}} - \sum_{j} x_{ij}^{t}$$</li>
 </ul>
 <p>$\delta_{ji}$ is the travel time between nodes</p>
 <ul>
 <li><strong>Physical constraints on outflows from nodes</strong>
-$$ q_{out} \leq \sqrt{2 \times g \times water\ depth} \times C_D $$</li>
+$$ q_{out} \leq \sqrt{2 \times g \times water\ depth} $$</li>
 </ul>
 
 </div>
@@ -13364,10 +13364,10 @@ $$ q_{out} \leq \sqrt{2 \times g \times water\ depth} \times C_D $$</li>
 
 
 
-<div id="b31c1429-02a1-4684-9816-9b5ec77c973c"></div>
+<div id="6cde74cd-c0ab-497f-9da2-ab7091ec2a0e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b31c1429-02a1-4684-9816-9b5ec77c973c');
+var element = $('#6cde74cd-c0ab-497f-9da2-ab7091ec2a0e');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -14199,7 +14199,7 @@ $$ q^t_{out} \leq 1.13047751 \times V^t_i/A_i + 3.65949363 $$</p>
 $$ \min \sum^N_{i} \sum^T_t V_i^t $$
 <strong><em>Constraints</em></strong></p>
 <p><em>Mass Balance</em>:
-$$ V_i^t = V_i^{t-1} + q_i^{t-1} +  \sum_{j} x_{ji}^{t-\delta_{ji}} - \sum_{j} x_{ij}^{t-1}\ \text{for}\ \forall t\  \text{and}\ \forall i \in N$$
+$$ V_i^t = V_i^{t-1} + q_i^{t} +  \sum_{j} x_{ji}^{t-\delta_{ji}} - \sum_{j} x_{ij}^{t}\ \text{for}\ \forall t\  \text{and}\ \forall i \in N$$
 <em>Flow thresholds</em>:
 $$ x_{ij}^t \leq u_{ij}\ \text{for}\ \forall t\  \text{and}\ \forall ij \in A$$</p>
 <p><em>Outflow limitation</em>:
@@ -14235,7 +14235,7 @@ $$ V_{ij} \leq T \times u_{ij} $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Sub Problem</strong>
-$$ \max \sum^T_t V_{i}^t $$
+$$ \max \sum^T_t x_{ij}^t $$
 <strong><em>Constraints</em></strong></p>
 <p><em>Mass Balance</em>:
 $$ V_i^t = V_i^{t-1} + q_{i}^t - \sum_j x_{ij}^t $$ 
@@ -14284,9 +14284,9 @@ $$ \sum_t x_{ij}^t \leq V_{ij} $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Issues-to-be-addressed">Issues to be addressed<a class="anchor-link" href="#Issues-to-be-addressed">&#182;</a></h1><ol>
-<li>Outflow is limited </li>
+<li>Better objective formulations </li>
 <li>Spikes in the flows</li>
-<li>Horizon time</li>
+<li>Scalable formulation for horizon time</li>
 </ol>
 
 </div>

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex manuscript"] 1555192062 "manuscript.aux" "manuscript.bbl" "manuscript" 1555193145
+["bibtex manuscript"] 1555442819 "manuscript.aux" "manuscript.bbl" "manuscript" 1555442821
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/base/unsrt.bst" 1480098433 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "manuscript.aux" 1555193145 1190 91ddd7dc53d69cb4e4d17b3b37e538fe ""
+  "manuscript.aux" 1555442821 1190 91ddd7dc53d69cb4e4d17b3b37e538fe ""
   "references.bib" 1553571086 940 d10a7dc785a3a7d44ce8586130eedadd ""
   (generated)
   "manuscript.blg"
   "manuscript.bbl"
-["pdflatex"] 1555193144 "manuscript.tex" "manuscript.pdf" "manuscript" 1555193145
+["pdflatex"] 1555442819 "manuscript.tex" "manuscript.pdf" "manuscript" 1555442821
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -74,12 +74,12 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "arxiv.sty" 1553571086 7523 593e0b9cbd984bb5c2015f92167ee753 ""
-  "manuscript.aux" 1555193145 1190 91ddd7dc53d69cb4e4d17b3b37e538fe ""
-  "manuscript.bbl" 1555192063 49 0eba253fc001332e731e8aba3f23127b "bibtex manuscript"
-  "manuscript.out" 1555193145 308 ea6c79a52afdf649265f3a43c2baee58 ""
-  "manuscript.tex" 1555193144 1305 07d746cd21f38f67a306165b8e0d2dcc ""
+  "manuscript.aux" 1555442821 1190 91ddd7dc53d69cb4e4d17b3b37e538fe ""
+  "manuscript.bbl" 1555442819 49 0eba253fc001332e731e8aba3f23127b "bibtex manuscript"
+  "manuscript.out" 1555442821 308 ea6c79a52afdf649265f3a43c2baee58 ""
+  "manuscript.tex" 1555442818 1305 07d746cd21f38f67a306165b8e0d2dcc ""
   (generated)
-  "manuscript.out"
-  "manuscript.log"
   "manuscript.pdf"
+  "manuscript.log"
+  "manuscript.out"
   "manuscript.aux"

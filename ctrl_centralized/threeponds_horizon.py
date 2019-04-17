@@ -42,8 +42,8 @@ m.addConstrs((outflows[time, 1] <= (volumes[time-1, 1]*1.13047751*0.01  + 3.6594
 m.addConstrs((outflows[time, 2] <= (volumes[time-1, 2]*1.13047751*0.01  + 3.65949363) for time in horizon[1:]), name="Downstream Pond")
 
 ## 4. Add some initial volume 
-m.addConstr(volumes[0, 0] == InitialVolume, "Initial Volume Pond 1")
-m.addConstr(volumes[0, 1] == InitialVolume, "Initial Volume Pond 2")
+m.addConstr(volumes[0, 0] == 0.6*InitialVolume, "Initial Volume Pond 1")
+m.addConstr(volumes[0, 1] == 0.4*InitialVolume, "Initial Volume Pond 2")
 m.addConstr(volumes[0, 2] == InitialVolume, "Initial Volume Pond 3")
 
 ## 5. Volume constraints 

@@ -291,6 +291,8 @@ for i in range(0,10):
             outflow[i].append(o)
 print(sum(outflow[4]))
 
+np.save("./volume_200.npy", volume)
+np.save("./outflow_200.npy", outflow)
 
 sns.set_style("whitegrid")
 # Covnert to numbers

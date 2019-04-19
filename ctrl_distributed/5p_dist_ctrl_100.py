@@ -282,7 +282,7 @@ inflows_p1 = np.zeros(data["travel_time"][0])
 inflows_p3 = np.zeros(data["travel_time"][2])
 inflows_p4 = np.zeros(data["travel_time"][3])
 
-for i in range(0,10):
+for i in range(0,6):
     volumes, outflows_t, outflows_tt = master(data)
     data, outflow_pond, volume_ponds, inflows_p1, inflows_p3, inflows_p4  = subproblem(data, outflows_t, outflows_tt, inflows_p1, inflows_p3, inflows_p4)
     for i in data["nodes"]:
@@ -291,6 +291,8 @@ for i in range(0,10):
             outflow[i].append(o)
 print(sum(outflow[4]))
 
+np.save("./volume_100.npy", volume)
+np.save("./outflow_100.npy", outflow)
 
 sns.set_style("whitegrid")
 # Covnert to numbers

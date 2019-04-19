@@ -294,6 +294,8 @@ print(sum(outflow[4]))
 
 sns.set_style("whitegrid")
 # Covnert to numbers
+np.save("./volume_80.npy", volume)
+np.save("./outflow_80.npy", outflow)
 
 plt.figure(1)
 p = 1

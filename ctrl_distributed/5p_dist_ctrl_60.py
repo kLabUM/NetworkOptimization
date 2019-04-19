@@ -266,7 +266,7 @@ data["arcs"] = [0, 1, 2, 3, 4]
 data["max_volume"]   = [1000, 1000, 1000, 1200, 1000]
 data["channel_flow"] =  [5, 10, 5, 10, 10]
 data["travel_time"]  = [10, 40, 50, 30, 10]
-data["weights"]  = [1.0, 1.0, 1.0, 0.5, 1.0]
+data["weights"]  = [1.0, 1.0, 1.0, 100.5, 1.0]
 data["vt0"] = INIT_VOLUME
 data["qin"] = [0, 0, 0, 0, 0]
 data["horizon"] = 60
@@ -294,6 +294,8 @@ print(sum(outflow[4]))
 
 sns.set_style("whitegrid")
 # Covnert to numbers
+np.save("./volume_60.npy", volume)
+np.save("./outflow_60.npy", outflow)
 
 plt.figure(1)
 p = 1
